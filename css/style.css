@@ -1,0 +1,12 @@
+.paper text {
+	text-transform: capitalize;
+}
+
+#svg-container {
+	display: flex;
+	justify-content: center;
+}
+
+svg {
+	overflow: visible;
+}
