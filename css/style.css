@@ -1,5 +1,63 @@
-.paper text {
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700|VT323');
+
+html, body {
+    margin: 0;
+    font-family: "PT Sans", sans-serif;
+    overflow-x: hidden;
+}
+
+body {
+	overflow-y: hidden;
+}
+
+#cover {
+    width: 100vw;
+    height: 100vh;
+}
+
+h1, h2 {
+    font-family: "VT323";
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 6em;
+    border-top: 5px solid #000;
+    padding-top: 20px;
+}
+
+h2 {
+    font-size: 4em;
+    background-color: yellow;
+    margin-left: 10%;
+}
+
+h3 {
+    text-align: center;
+    font-size: 30px;
+}
+
+#nav {
+    top: 0;
+    position: fixed;
+    padding: 20px;
+    background-color: rgba(255,255,255,0.7);
+    width: 100%;
+    text-align: right;
+}
+
+#nav a {
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 40px;
+    text-transform: uppercase;
+}
+
+.paper text, .event text {
 	text-transform: capitalize;
+	font-family: "VT323", monospace;
+	font-size: 20px;
 }
 
 #svg-container {
@@ -10,3 +68,37 @@
 svg {
 	overflow: visible;
 }
+
+.about-img {
+	max-width: 100%;
+	margin: 0 auto;
+    display: block;
+}
+
+#scroll-plz {
+    bottom: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 50px;
+    font-size: 50px;
+    font-family: "VT323", monospace;
+}
+
+#scroll-plz p {
+    margin: 0;
+}
+
+#paperTooltip .title {
+	text-transform: capitalize;
+}
+
+.desc {
+    margin: 50px auto;
+    width: 60%;
+    max-width: 600px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+

@@ -1,0 +1,37 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Privacy Surveys | About the Dataset</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+	<script src="http://d3js.org/d3-selection-multi.v1.js"></script>
+
+</head>
+
+<body>
+	<div id="nav">
+		<a href="about.html">About the Dataset</a>
+		<a href="index.html#svg-container">Timeline</a>
+		<a href="">Keyword Search</a>
+	</div>
+	
+	<h1>About the Dataset</h1>
+	<h2>I gathered 70 research surveys about online privacy and here's what I found</h2>
+	<p class="desc">Facebook was by far the most popular subject of study. Many surveys dealt with "SNS"/"OSNs" in general. Experimental survey designs sometimes created their own fictitious websites/apps in order to better control the conditions, or perhaps to avoid controversy. A few surveys discussed "online privacy" more generally, including social networks. In the early 2000s, before the rise of SNS, e-commerce was a popular space to study online privacy. Google+ and chatrooms/forums were briefly interesting to researchers, with two surveys each in this dataset. Twitter, LinkedIn, MySpace, Runet (Vkontakte et al), and ICQ messenger are all represented in this dataset with one survey each.</p>
+	<img src="img/sns@2x.png" alt="Frequency of SNS in surveys" class="about-img" />
+	<h2>Basic facts about the papers</h2>
+	<p class="desc">Most papers were relatively new and had few citations. There was a modest correlation between publication date and number of citations. A handful of papers had a very large number of citations.</p>
+	<img src="img/citations.png" alt="Citation count histogram" class="about-img" />
+	<p class="desc">The US was the most represented country. Many European countries were also represented. Russia, Morocco, Japan, and India were represented with the goal of understanding the culture of those countries.</p>
+	<img src="img/countries.png" alt="Number of countries bar graph" class="about-img" />
+	<p class="desc">Most surveys had under 1000 respondents. 375-500 was the most common sample size. Those that had a very large number typically were performing secondary analysis on a large dataset such as a Pew survey.</p>
+	<img src="img/samplesize.png" alt="Sample size histogram" class="about-img" />
+	<p class="desc">Most surveys were correlational and confirmatory, stating and testing specified hypotheses. Some gathered descriptive statistics about populations and only reported percentages. An equal number performed correlation analysis on their data, but did not state hypotheses in advance. A handful used an experiment design where they randomly assigned participants to conditions. One survey made longitudinal comparisons between privacy in the past and present, and another supplemented its experiment design with an existing dataset.</p>
+	<img src="img/research.png" alt="Research methods" class="about-img" />
+	<h2>How do surveys operationalize privacy?</h2>
+	<img src="img/variables.png" alt="Concepts in variables" class="about-img" />
+</body>
+</html>
