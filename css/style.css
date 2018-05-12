@@ -89,6 +89,10 @@ svg {
     margin: 0;
 }
 
+#paperTooltip, #eventTooltip {
+	pointer-events: none;
+}
+
 #paperTooltip .title {
 	text-transform: capitalize;
 }
@@ -101,4 +105,27 @@ svg {
     line-height: 1.5;
 }
 
+#search-input {
+    margin-top: 100px;
+    text-align: center;
+}
 
+#search {
+    padding: 10px;
+    width: 300px;
+    font-size: 20px;
+    font-family: "PT Sans";
+}
+
+#chart-container {
+	margin: 50px auto;
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+#timeseries, #frequency {
+	width: 100%;
+	height: 500px;
+}

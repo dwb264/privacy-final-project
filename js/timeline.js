@@ -121,6 +121,7 @@ function show_viz(error, network, events, colors) {
 		.attr("x", width/3 + 50)
 		.attr("y", 100)
 		.attr("width", 400)
+		.attr("height", 1000)
 }
 
 function makeMultiline(text,linelength) {
@@ -149,7 +150,9 @@ function showPaperTooltip(d) {
 	var r = g.append("rect")
 		.attr("width", 400)
 		.attr("height", 200)
-		.attr("fill", "#e8e8e8");
+		.attr("fill", "#f8f8f8")
+		.attr("stroke", "#4286f4")
+		.attr("stroke-width", "2px");
 
 	// Paper title
 	var titletext = d.title + " (" + d.id + ")";
@@ -214,7 +217,9 @@ function showEventTooltip(d) {
 	var r = g.append("rect")
 		.attr("width", 400)
 		.attr("height", 200)
-		.attr("fill", "#e8e8e8");
+		.attr("fill", "#f8f8f8")
+		.attr("stroke", "#4286f4")
+		.attr("stroke-width", "2px");
 
 	// Event facts
 	var titletext = d.description;

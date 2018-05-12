@@ -1,0 +1,35 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Privacy Surveys | Keyword Search</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/c3.min.css">
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+	<script src="http://d3js.org/d3-selection-multi.v1.js"></script>
+	<script src="js/c3.min.js"></script>
+
+</head>
+
+<body>
+	<div id="nav">
+		<a href="about.html">About the Dataset</a>
+		<a href="index.html#svg-container">Timeline</a>
+		<a href="search.html">Keyword Search</a>
+	</div>
+	<h1>Keyword Search</h1>
+	<p class="desc">Below, you can enter a term and search the text of all papers in the dataset. A trendline of the keyword over time and a bar graph which papers use it most frequently will be displayed.</p>
+	<div id="search-input">
+		<p>Enter a search keyword</p>
+		<input type="text" id="search" placeholder='"contextual integrity", "OSNs", etc.'>
+	</div>
+		<div id="chart-container">
+			<div id="timeseries"></div>
+			<div id="frequency"></div>
+		</div>
+	</div>
+	<script src="js/search.js"></script>
+</body>
+</html>

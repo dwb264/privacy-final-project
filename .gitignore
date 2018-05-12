@@ -1,2 +1,4 @@
 papers/
 *.ai
+c3/
+*.pyc
