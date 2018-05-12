@@ -129,3 +129,31 @@ svg {
 	width: 100%;
 	height: 500px;
 }
+
+#keywords {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#keywords div {
+    display: flex;
+    flex-direction: row;
+    background-color: #666;
+    margin-right: 10px;
+    color: #fff;
+    font-size: 12px;
+}
+
+#keywords div p {
+    padding: 5px;
+    margin: 0;
+    text-align: center;
+}
+
+#keywords p.x {
+    background-color: #4286f4;
+    width: 20px;
+    text-align: center;
+    cursor: pointer;
+}

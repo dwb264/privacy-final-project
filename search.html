@@ -20,14 +20,14 @@
 		<a href="search.html">Keyword Search</a>
 	</div>
 	<h1>Keyword Search</h1>
-	<p class="desc">Below, you can enter a term and search the text of all papers in the dataset. A trendline of the keyword over time and a bar graph which papers use it most frequently will be displayed.</p>
+	<p class='desc'>See how frequently terms appear in the dataset. The chart shows the count of the keyword across all papers.</p>
 	<div id="search-input">
-		<p>Enter a search keyword</p>
-		<input type="text" id="search" placeholder='"contextual integrity", "OSNs", etc.'>
+		<p>Enter a keyword or phrase</p>
+		<input type="text" id="search" placeholder='contextual integrity, sns, etc.'>
 	</div>
 		<div id="chart-container">
+			<div id="keywords"></div>
 			<div id="timeseries"></div>
-			<div id="frequency"></div>
 		</div>
 	</div>
 	<script src="js/search.js"></script>
