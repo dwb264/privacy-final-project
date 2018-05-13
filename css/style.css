@@ -174,3 +174,18 @@ svg {
 #enter-keyword:hover {
     opacity: 0.9;
 }
+
+iframe {
+    width: 100%;
+    margin-top: -31px;
+    margin-left: -2px;
+    height: 800px;
+}
+
+#data-container {
+    width: 95vw;
+    margin: 0 auto 50px auto;
+    overflow: hidden;
+    height: 745px;
+    border: 1px solid #d8d8d8;
+}

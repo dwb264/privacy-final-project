@@ -1,5 +1,5 @@
 var network, fulltext, textByYear;
-var keywords = ["social media"];
+var keywords = [];
 var chart, chart2, years;
 
 d3.queue()
@@ -28,6 +28,7 @@ function show_viz(error, net, text) {
 	}
 
 	var keyword = "Facebook"; // Example input
+	keywords.push(keyword.toLowerCase());
 	var data = find_normalized(keyword);
 
 	chart = c3.generate({
@@ -52,6 +53,14 @@ function show_viz(error, net, text) {
 	        	min: 0,
 	        	padding: { bottom: 0 }
 	        }
+	    },
+	    grid: {
+	        x: {
+	            show: true
+	        },
+	        y: {
+	            show: true
+	        }
 	    }
 	});
 
@@ -70,8 +79,10 @@ function show_viz(error, net, text) {
 
 d3.select("#enter-keyword").on("click", function() {
 	var keyword = document.getElementById("search").value;
-	document.getElementById("search").value = "";
-	show_chart(keyword);
+	if (keyword.trim() != "") {
+		document.getElementById("search").value = "";
+		show_chart(keyword);
+	}
 })
 
 // Return papers, # of times, and context of keyword mention
@@ -128,6 +139,7 @@ function find_normalized(keyword) {
 }
 
 function show_chart(keyword) {
+	keyword = keyword.toLowerCase();
 	if (keywords.indexOf(keyword) == -1) {
 		keywords.push(keyword);
 
