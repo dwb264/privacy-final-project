@@ -13,6 +13,7 @@ function show_viz(error, net, text) {
 	fulltext = text;
 	fulltext.forEach(function(d) {
 		d.text = d.text.split(". ");
+		d.title = network.nodes.filter(function(e) { return e.id == d.paper.toLowerCase(); })[0].title;
 	})
 
 	textByYear = d3.nest()
@@ -27,7 +28,7 @@ function show_viz(error, net, text) {
 		years.push("01-01-"+String(i));
 	}
 
-	var keyword = "Facebook"; // Example input
+	var keyword = "facebook"; // Example input
 	keywords.push(keyword.toLowerCase());
 	var data = find_normalized(keyword);
 
@@ -66,7 +67,11 @@ function show_viz(error, net, text) {
 
 	var tag = d3.select("#keywords")
 		.append("div");
-	tag.append("p").text(keyword);
+
+	tag.append("p").
+		text(keyword)
+		.on("click", function() { show_context(keyword) });
+
 	tag.append("p")
 		.attr("class", "x")
 		.text("x")
@@ -106,6 +111,7 @@ function find(keyword) {
 
 			results.push({
 				"paper": f.paper,
+				"title": f.title,
 				"year": yr,
 				"count": count,
 				"context": sentences
@@ -156,7 +162,10 @@ function show_chart(keyword) {
 
 	var tag = d3.select("#keywords")
 		.append("div");
-	tag.append("p").text(keyword);
+
+	tag.append("p").text(keyword)
+		.on("click", function() { show_context(keyword) });
+
 	tag.append("p")
 		.attr("class", "x")
 		.text("x")
@@ -167,3 +176,34 @@ function show_chart(keyword) {
 		});
 	}
 }
+
+function show_context(keyword) {
+	var results = find(keyword);
+	results = results.sort(function(a, b) {
+		if (a.year < b.year) return -1;
+		if (a.year > b.year) return 1;
+		return 0;
+	})
+
+	var context_div = d3.select("#context");
+	context_div.html("");
+	context_div.append("h3").text("Context for \"" + keyword + "\"");
+
+	results.forEach(function(paper) {
+		context_div.append("h4").text(paper.title + " (" + paper.paper + ")");
+		paper.context.forEach(function(sentence) {
+			sentence = sentence.toLowerCase().split(keyword).join("<strong>" + keyword + "</strong>");
+			context_div.append("p").html(sentence);
+		})
+	})
+
+	$('html,body').animate({
+   		scrollTop: $("#context").offset().top - 50
+	});
+
+}
+
+d3.select("#top").on("click", function() {
+	$('html,body').animate({scrollTop: 0}, 1000);
+
+})

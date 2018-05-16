@@ -10,13 +10,13 @@
 	<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 	<script src="https://d3js.org/d3-selection-multi.v1.js"></script>
 	<script src="js/c3.min.js"></script>
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
 	<div id="nav"></div>
 	<h1>Keyword Trends</h1>
-	<p class='desc'>See how frequently terms appear in the dataset. The chart shows the percentage of words across all papers that the keyword makes up for each year. You can enter multiple words and see how they compare.</p>
+	<p class='desc'>See how frequently terms appear in the dataset. The chart shows the percentage of words across all papers that the keyword makes up for each year. You can enter multiple words and see how they compare.</p><p class='desc'><span style='background-color: #666; color: #fff; font-size: 13px; padding: 5px'>Keywords</span> - click on keyword to view a list of the sentences where it appears in the papers. Click the <span style='background-color: #4286f4; color: #fff; font-size: 13px; padding: 5px 10px'>x</span> to remove it from the chart.</p>
 	<div id="search-input">
 		<p>Enter a keyword or phrase</p>
 		<input type="text" id="search" placeholder='contextual integrity, sns, etc.'><div id="enter-keyword">Enter</div>
@@ -24,9 +24,12 @@
 		<div id="chart-container">
 			<div id="keywords"></div>
 			<div id="timeseries"></div>
-			<div id="frequency"></div>
+			<div id="context"></div>
 		</div>
 	</div>
+
+	<div id="top">&uarr;</div>
+
 	<script src="js/nav.js"></script>
 	<script src="js/search.js"></script>
 </body>

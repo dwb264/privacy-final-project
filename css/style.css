@@ -152,6 +152,7 @@ svg {
     padding: 5px;
     margin: 0;
     text-align: center;
+    cursor: pointer;
 }
 
 #keywords p.x {
@@ -188,4 +189,35 @@ iframe {
     overflow: hidden;
     height: 745px;
     border: 1px solid #d8d8d8;
+}
+
+#context p {
+    font-size: 13px;
+    background-color: #f8f8f8;
+    padding: 10px;
+}
+
+#context strong {
+    background-color: yellow;
+}
+
+#top {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    font-size: 30px;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    background-color: #d8d8d8;
+    border-radius: 50px;
+    margin: 10px;
+}
+
+#top:hover {
+    color: #000;
+    cursor: pointer;
 }

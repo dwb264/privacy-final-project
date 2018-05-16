@@ -1,7 +1,7 @@
 var eventData, networkData;
 var year_counts;
 var social_colors;
-var event_key = {"Law": "⚖️", "Technology": "🌐", "Revelations": "😮", "Theory": "👩‍🎓", "Social Media": "👥", "Controversy": "🤔"};
+var event_key = {"Law": "scale.png", "Technology": "globe.png", "Revelations": "gasp.png", "Theory": "student.png", "Social Media": "people.png", "Controversy": "hmm.png"};
 
 var svg = d3.select("svg");
 var height = svg.attr("height"), width = svg.attr("width");
@@ -100,20 +100,28 @@ function show_viz(error, network, events, colors) {
 			.attr("transform", "translate(20,0)");
 
 	// Display events
-	svg.selectAll(".event")
+	var event = svg.selectAll(".event")
 		.data(eventData)
 		.enter()
 		.append("g").attr("class", "event") 
 		.attr("transform", function(d, i) {
 			var h = parseFloat(timeScale(d.date));
-			return "translate(" + (width/3 - 50) + ", " + h + ")" })
-		.append("text").attr("class", "title")
+			return "translate(" + (width/3 - 60) + ", " + h + ")" });
+	
+	event.append("text").attr("class", "title")
 			.attr("text-anchor", "end")
-			.text(function (d) { return d.title + " " + event_key[d.type]; })
+			.text(function (d) { return d.title })
+			.attr("alignment-baseline", "middle")
+			.attr("transform", "translate(-10)")
 		.on("mouseover", showEventTooltip)
 		.on("mouseout", function(d) {
 			d3.select("#eventTooltip").remove();
 		});
+
+	event.append("image")
+		.attr("xlink:href", function(d) { return "img/" + event_key[d.type] })
+		.attr("width", 20).attr("height", 20)
+		.attr("y", -12);
 
 	// Display legend
 	svg.append("image")
@@ -121,7 +129,7 @@ function show_viz(error, network, events, colors) {
 		.attr("x", width/3 + 50)
 		.attr("y", 100)
 		.attr("width", 400)
-		.attr("height", 1000)
+		.attr("height", 1000);
 }
 
 function makeMultiline(text,linelength) {
@@ -236,4 +244,3 @@ function showEventTooltip(d) {
 	}
 	r.attr("height", linenum * 20 + 20);
 }
-
