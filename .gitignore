@@ -1,4 +1,5 @@
 papers/
 *.ai
 *.pyc
-python/.ipynb_checkpoints/
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
