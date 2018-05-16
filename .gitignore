@@ -1,5 +1,3 @@
 papers/
-*.ai
-*.pyc
 .ipynb_checkpoints
 */.ipynb_checkpoints/*

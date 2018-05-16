@@ -67,8 +67,3 @@ if __name__ == "__main__":
     filenames = get_filenames()
     citations = get_citations()
     get_fulltext_json(filenames, citations, "../Papers/")
-    
-    
-        
-    
- 

@@ -73,7 +73,6 @@ def get_references(text, ref_type):
         
 
 if __name__ == "__main__":
-    
     # Example of extracting references
     txt = extract_text("../Papers/Acquisti2006.pdf")
     r = get_references_section(txt)
